@@ -1,38 +1,190 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Calculator Container */
+.calculator-container {
   min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Main Calculator */
+.calculator {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.calculator-body {
+  width: 320px;
+}
+
+/* Display */
+.display-container {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.display-content {
+  text-align: right;
+}
+
+.operation-preview {
+  color: #a0a0a0;
+  font-size: 0.875rem;
+  height: 1.5rem;
+  font-family: 'Courier New', monospace;
+}
+
+.main-display {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 300;
+  font-family: 'Courier New', monospace;
+  height: 3rem;
+  overflow: hidden;
+  line-height: 3rem;
+}
+
+/* Button Grid */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+/* Base Button Styles */
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Wide Buttons */
+.btn-wide {
+  grid-column: span 2;
+}
+
+/* Number Buttons */
+.btn-number {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.btn-number:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Operation Buttons */
+.btn-operation {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-operation:hover {
+  background: linear-gradient(135deg, #2563eb, #0891b2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Clear Button */
+.btn-clear {
+  background: linear-gradient(135deg, #ef4444, #ec4899);
+  color: white;
+}
+
+.btn-clear:hover {
+  background: linear-gradient(135deg, #dc2626, #db2777);
+}
+
+/* Delete Button */
+.btn-delete {
+  background: linear-gradient(135deg, #f97316, #eab308);
+  color: white;
+}
+
+.btn-delete:hover {
+  background: linear-gradient(135deg, #ea580c, #ca8a04);
+}
+
+/* Equals Button */
+.btn-equals {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.btn-equals:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .calculator-container {
+    padding: 0.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .calculator {
+    padding: 1.5rem;
   }
+  
+  .calculator-body {
+    width: 280px;
+  }
+  
+  .main-display {
+    font-size: 2rem;
+  }
+  
+  .btn {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode alternative */
+@media (prefers-color-scheme: dark) {
+  .calculator-container {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e3a8a 100%);
+  }
+}
+
+/* Accessibility */
+.btn:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Animation for button press feedback */
+@keyframes buttonPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.btn:active {
+  animation: buttonPress 0.1s ease;
 }

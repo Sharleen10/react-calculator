@@ -17,6 +17,15 @@ function App() {
       setDisplay(display === "0" ? String(digit) : display + digit);
     }
   };
+  // Handles decimal point input, ensuring only one decimal is added
+    const inputDecimal = () => {
+    if (waitingForOperand) {
+      setDisplay("0.");
+      setWaitingForOperand(false);
+    } else if (display.indexOf(".") === -1) {
+      setDisplay(display + ".");
+    }
+  };
 
 }
 

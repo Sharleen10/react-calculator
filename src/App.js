@@ -27,6 +27,14 @@ function App() {
     }
   };
 
+  // Resets the calculator to its initial state
+  const clear = () => {
+    setDisplay("0");
+    setPreviousValue(null);
+    setOperation(null);
+    setWaitingForOperand(false);
+  };
+
 }
 
 export default App;

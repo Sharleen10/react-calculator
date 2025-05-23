@@ -2,7 +2,7 @@
 
 A beautiful, modern calculator built with React featuring glassmorphism design, smooth animations, and professional calculator functionality.
 
-![image alt]https://github.com/Sharleen10/react-calculator/blob/e5a7f2d510383ee83a89bacd5f38a8106824a4c4/Calculator.png
+![image alt](https://github.com/Sharleen10/react-calculator/blob/e5a7f2d510383ee83a89bacd5f38a8106824a4c4/Calculator.png)
 
 ✨ Features
 🎯 Core Functionality

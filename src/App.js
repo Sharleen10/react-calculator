@@ -62,6 +62,24 @@ function App() {
     setOperation(nextOperation);
   };
 
+  // Performs basic arithmetic operations based on the provided operator
+   const calculate = (firstValue, secondValue, operation) => {
+    switch (operation) {
+      case "+":
+        return firstValue + secondValue;
+      case "-":
+        return firstValue - secondValue;
+      case "×":
+        return firstValue * secondValue;
+      case "÷":
+        return secondValue !== 0 ? firstValue / secondValue : 0;
+      case "=":
+        return secondValue;
+      default:
+        return secondValue;
+    }
+  };
+
 }
 
 export default App;

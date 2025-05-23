@@ -35,6 +35,15 @@ function App() {
     setWaitingForOperand(false);
   };
 
+  // Deletes the last character from the display; resets to "0" if only one character remains
+    const deleteLast = () => {
+    if (display.length > 1) {
+      setDisplay(display.slice(0, -1));
+    } else {
+      setDisplay("0");
+    }
+  };
+
 }
 
 export default App;
